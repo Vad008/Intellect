@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Контакты</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"/>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+    <style>
+        p {
+            margin: 50px;
+            padding: 0px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        form {
+            border-radius: 8px;
+        }
+
+        input[type=text], input[type=password] {
+            width: 20%;
+            padding: 12px 10px;
+            margin: 8px 40%;
+            display: inline-block;
+            border: 4px solid #64B5F6;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            background-color: #90CAF9;
+            color: black;
+            padding: 14px 0px;
+            margin: 8px 40%;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 20%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            padding: 4px;
+            padding-left: 480px;
+            padding-right: 480px;
+        }
+    </style>
+</head>
+<body style="background-image: url(images/background.png); background-size: cover">
+<nav class="navbar navbar-expand-lg navbar-default bg-dark">
+    <div class="row" style="background-color: -moz-mac-accentdarkestshadow  ">
+
+        <div class="col-md-3">
+            <img src="images/intelimage.png"/>
+        </div>
+        <div class="col-md-8">
+            <ul class="navbar-nav">
+                <li class="active">
+                    <a class="nav-link" href="/main"> <span style="font-style: italic; font-size: 24px; color: white">Главная</span>
+                    </a>
+                </li>
+                <img src="images/delimiter.png"/>
+                <li>
+                    <a class="nav-link" href="/rules"><span
+                            style="font-style: italic; font-size: 24px; color: white">Правила</span></a>
+                </li>
+                <img src="images/delimiter.png"/>
+                <li>
+                    <a class="nav-link" href="/discount"><span
+                            style="font-style: italic; font-size: 24px; color: white">Акции</span></a>
+                </li>
+                <img src="images/delimiter.png"/>
+                <li>
+                    <a class="nav-link" href="/contacts"><span style="font-style: italic; font-size: 24px; color: white">Контакты</span></a>
+                </li>
+                <img src="images/delimiter.png"/>
+                <li>
+                    <a class="nav-link" href="/sertificate"><span style="font-style: italic; font-size: 24px; color: white">Сертификаты</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <H1 align="center" style="color: white;font-style: italic;">КОНТАКТЫ</H1>
+    </div>
+</div>
+<p align="center" style="color: white;font-style: italic; font-size: 20px">
+    <font face="Times New Roman">
+        тел: 096 491 65 12
+        <br/>
+        mail: intellect.cherkassy@gmail.com
+        <br/>
+        г. Черкассы ул. Сумгаитская 39
+        <br/>
+        Следите за нами в соц.сетях:
+        <br/>
+        <a href="#"><img src="images/instagram-300x298.png" width="30" height="30"/></a>
+        <a href="#"><img src="images/Facebook.png" width="30" height="30"/></a>
+        <a href="#"><img src="images/мл.png" width="30" height="30"/></a>
+        <br/>
+        <br/>
+        <br/>
+        Обратная связь:
+        <br/>
+    </font>
+</p>
+<form method="post" action="#">
+    <h2 align="center" style="color: white;font-style: italic; font-size: 20px">
+        Имя:
+    </h2>
+    <input placeholder="Вадим" align="center" type="text" name="name" required=""/>
+    <br/>
+    <h3 align="center" style="color: white;font-style: italic; font-size: 20px">
+        Телефон:
+    </h3>
+    <input placeholder="+380932026053" align="center" type="text" name="phone" required=""/>
+    <br/>
+    <h2 align="center" style="color: white;font-style: italic; font-size: 20px">
+        Почта:
+    </h2>
+    <input placeholder="Vad008@ukr.net" align="center" type="text" name="email" required=""/>
+    <br/>
+    <h2 align="center" style="color: white;font-style: italic; font-size: 20px">
+        Сообщение:
+    </h2>
+    <input placeholder="Введите сообщение" align="center" type="text" name="message" required=""/>
+    <br/>
+    <input align="center" type="submit" value="Отправить"/>
+</form>
+<h1 align="center">
+    <p style="color: white;"> Наше местоположение:</p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1297.4338683633366!2d32.01087635817788!3d49.43031449483688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d14c135925b809%3A0x739a321e44bde356!2z0JrQstC10YHRgi3QutC-0LzQvdCw0YLRiyDQmNC90YLQtdC70LvQtdC60YI!5e0!3m2!1sru!2sua!4v1526646730290"
+        width="600" height="450" frameborder="0" style="border:0" align="center" allowfullscreen=""></iframe>
+</h1>
+<h1 align="center">
+    <img src="images/intelimage2.png"/>
+</h1>
+
+
+</body>
+</html>

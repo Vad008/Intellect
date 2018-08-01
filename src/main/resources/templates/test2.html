@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        form {border-radius: 8px;}
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 10px;
+            margin: 8px 0px;
+            display: inline-block;
+            border: 2px solid #64B5F6;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            background-color: #90CAF9;
+            color: black;
+            padding: 14px 0px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            padding: 4px;
+            padding-left: 480px;
+            padding-right: 480px;
+        }
+
+    </style>
+</head>
+<body>
+<p align="center" th:text="${error}"></p>
+<form th:action="@{/auth}" method="post">
+    <div class="container"><label for="username"><b>Username:</b></label>
+        <input placeholder="Enter username" name="username" type="text"/></div>
+    <div class="container"><b>Password:</b> <input placeholder="Enter password  " name="password" type="password"/></div>
+    <div class="container"><input type="submit" value="Log Me In"/></div>
+</form>
+<form action="/registration">
+    <div class="container"><input type="submit" value="Register me"/></div>
+</form>
+</body>
+</html>
