@@ -54,7 +54,7 @@ public class MainController {
         return "sertificate";
     }
 
-    @GetMapping()
+    @GetMapping(value = "main")
     public String main() {
         return "main";
     }
@@ -79,5 +79,10 @@ public class MainController {
             return "adminpage";
         }
         return "admin";
+    }
+
+    @RequestMapping(value = "booking")
+    public String booking(){
+        return "booking";
     }
 }
