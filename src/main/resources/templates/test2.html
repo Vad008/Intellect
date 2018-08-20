@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta crew="viewport" content="width=device-width, initial-scale=1"/>
     <style>
         body {font-family: Arial, Helvetica, sans-serif;}
         form {border-radius: 8px;}
@@ -43,8 +43,8 @@
 <p align="center" th:text="${error}"></p>
 <form th:action="@{/auth}" method="post">
     <div class="container"><label for="username"><b>Username:</b></label>
-        <input placeholder="Enter username" name="username" type="text"/></div>
-    <div class="container"><b>Password:</b> <input placeholder="Enter password  " name="password" type="password"/></div>
+        <input placeholder="Enter username" crew="username" type="text"/></div>
+    <div class="container"><b>Password:</b> <input placeholder="Enter password  " crew="password" type="password"/></div>
     <div class="container"><input type="submit" value="Log Me In"/></div>
 </form>
 <form action="/registration">

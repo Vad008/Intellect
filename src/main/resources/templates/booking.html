@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Бронирование</title>
@@ -54,7 +54,7 @@
         }
     </style>
 </head>
-<body style="background-image: url(images/oldkush.png); background-size: cover">
+<body style="background-image: url(images/background.png); background-size: cover">
 <nav class="navbar navbar-expand-lg navbar-default bg-dark">
     <div class="row" style="background-color: -moz-mac-accentdarkestshadow  ">
 
@@ -97,13 +97,48 @@
         <H1 align="center" style="color: white;font-style: italic;">Бронирование</H1>
     </div>
 </div-->
-<p align="center" style="color: yellow;font-style: italic; font-size: 40px">
-    БОЛЬШОЙ КУШ
-</p>
+<div class="row">
+    <div class="col-md-12" style="background-image: url(images/oldkush.png);background-size: cover">
+
+        <!--H1 align="center" style="color: white;font-style: italic;">
+            <br/>
+            <br/>
+            <img align="center" src="images/imagekush.png"/>
+            БОЛЬШОЙ КУШ
+        </H1-->
+        <br/>
+        <br/>
+        <br/>
+        <br/><br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+    </div>
+</div>
+<p align="center"  style="color: greenyellow;font-style: italic; font-size: 20px" th:text="${isGood}"></p>
+
 <p align="center" style="color: white;font-style: italic; font-size: 20px">
     <font face="Times New Roman">
+        Количество <img src="images/human.png"/>  от 2 до 5
+        <img src="images/delimiter.png"/>
+        Уровень страха:
+        <img src="images/afraidkush.png"/>
+        <img src="images/delimiter.png"/>
+        Уровень сложности:
+        <img src="images/hardkush.png"/>
+        <img src="images/hardkush.png"/>
+        <img src="images/hardkush.png"/>
+        <img src="images/hardkush.png"/>
+        <img src="images/delimiter.png"/>
+        <a href="/records" style="color: white;font-style: italic; font-size: 20px">Рекорды квеста</a>
         <br/>
+        <img src="images/time.png"/> = 60 мин
+        <img src="images/delimiter.png"/>
+        Цены: понедельник - четверг с 11.00 до 16.00 - 400 грн; пятница - воскресенье с 16.00 ло 22.00 - 500 грн
         <br/>
+        понедельник - четверг с 16.00 до 22.00  и пятница - воскресенье с 11.00 ло 16.00 - 400 грн;
         <br/>
         <br/>
         <br/>
@@ -122,30 +157,41 @@
     <h2 align="center" style="color: white;font-style: italic; font-size: 20px">
         Имя:
     </h2>
-    <input placeholder="Вадим" align="center" type="text" name="name" required=""/>
+    <input placeholder="Вадим" align="center" type="text" crew="crew" required=""/>
     <br/>
     <h3 align="center" style="color: white;font-style: italic; font-size: 20px">
         Телефон:
     </h3>
-    <input placeholder="+380932026053" align="center" type="text" name="phone" required=""/>
+    <input placeholder="+380932026053" align="center" type="text" crew="timeexit" required=""/>
     <br/>
     <h2 align="center" style="color: white;font-style: italic; font-size: 20px">
         Почта:
     </h2>
-    <input placeholder="Vad008@ukr.net" align="center" type="text" name="email" required=""/>
+    <input placeholder="Vad008@ukr.net" align="center" type="text" crew="quest" required=""/>
     <br/>
+    <h2 align="center" style="color: white;font-style: italic; font-size: 20px">
+        Выберите дату и время:
+        <br/>
+    <input   type="datetime-local" align="center" crew="time" required=""/>
+    </h2>
+        <br/>
     <h2 align="center" style="color: white;font-style: italic; font-size: 20px">
         Сообщение:
     </h2>
-    <input placeholder="Введите сообщение" align="center" type="text" name="message" required=""/>
+    <input placeholder="Введите сообщение, если считаете нужнымм" align="center" type="text" crew="message"/>
     <br/>
-    <input align="center" type="submit" value="Отправить"/>
+    <input align="center" type="submit" value="Забронировать"/>
+    <br/>
+    <br/>
+    <br/>
 </form>
-<h1 align="center">
-    <p style="color: white;"> Наше местоположение:</p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1297.4338683633366!2d32.01087635817788!3d49.43031449483688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d14c135925b809%3A0x739a321e44bde356!2z0JrQstC10YHRgi3QutC-0LzQvdCw0YLRiyDQmNC90YLQtdC70LvQtdC60YI!5e0!3m2!1sru!2sua!4v1526646730290"
-            width="600" height="450" frameborder="0" style="border:0" align="center" allowfullscreen=""></iframe>
-</h1>
+
+<h2 align="center" style="color: white;font-style: italic; font-size: 20px">
+    Если вы испытываете проблемы с онлайн брониhованием ,
+    <br/>
+    то позвоните и забронируйте квест по телефону: +380932026053!!
+</h2>
+
 <h1 align="center">
     <img src="images/intelimage2.png"/>
 </h1>
