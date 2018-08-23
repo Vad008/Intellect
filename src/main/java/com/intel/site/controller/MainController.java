@@ -38,9 +38,6 @@ public class MainController {
 
     @GetMapping(value = "discount")
     public String discount() {
-        for (Sertificate sert : dbService.getAllSertificates()) {
-            System.out.println(sert.getName());
-        }
         return "discount";
     }
 
@@ -63,8 +60,6 @@ public class MainController {
 
     @GetMapping(value = "main")
     public String main() {
-        Emailsend em = new Emailsend();
-        em.send();
         return "main";
     }
 
@@ -131,20 +126,23 @@ public class MainController {
     public String endBooking(Model model, @RequestParam String name, @RequestParam String phone,
                              @RequestParam String email, @RequestParam String time, @RequestParam String message) {
         dbService.addBook(new Book(dbService.getNewIdBook(), name, phone, email, time, "Куш", message));
+        Emailsend em = new Emailsend(name,phone,email,time,message,"Куш");
+        em.send();
         model.addAttribute("isGood", "Квет забронирован успешно");
         return "booking";
     }
 
     @RequestMapping(value = "bookingclin", method = RequestMethod.GET)
     public String bookingClin() {
-        LocalDateTime lcdt = LocalDateTime.now();
-        System.out.println(lcdt);
         return "bookingclin";
     }
 
     @RequestMapping(value = "bookingclin", method = RequestMethod.POST)
-    public String endBookingClin(Model model, @RequestParam String name, @RequestParam String time) {
-        System.out.println(time);
+    public String endBookingClin(Model model, @RequestParam String name, @RequestParam String phone,
+                                 @RequestParam String email, @RequestParam String time, @RequestParam String message) {
+        model.addAttribute("isGood", "Квет забронирован успешно");
+        Emailsend em = new Emailsend(name,phone,email,time,message,"Клініка");
+        em.send();
         model.addAttribute("isGood", "Квет забронирован успешно");
         return "bookingclin";
     }

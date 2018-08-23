@@ -55,31 +55,32 @@ public class Emailsend {
         Session session = Session.getDefaultInstance(properties); // default session
 
         try {
-            MimeMessage message = new MimeMessage(session); // email message
+            MimeMessage mimemessage = new MimeMessage(session); // email message
 
-            message.setFrom(new InternetAddress(from)); // setting header fields
+            mimemessage.setFrom(new InternetAddress(from)); // setting header fields
 
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            mimemessage.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
             if (message.equals("Certificate")){
-                message.setSubject("Сертификат"); // subject line
+                mimemessage.setSubject("Сертификат"); // subject line
                 // actual mail body
-                message.setText("Имя: " + name + "\n"+
-                        "Телефон: " + name + "\n"+
-                        "Почта:: " + name + "\n"+
-                        "Дата: " + name + "\n"+
-                        "Сообщение: " + name + "\n"+
-                        "Квест: " + name);
+                mimemessage.setText("Имя: " + name + "\n"+
+                        "Телефон: " + phone + "\n"+
+                        "Почта:: " + email );
             } else {
-                message.setSubject("Test Mail from Java Program"); // subject line
+                mimemessage.setSubject("Квест"); // subject line
                 // actual mail body
-                message.setText("Олег лох!");
+                mimemessage.setText("Имя: " + name + "\n"+
+                        "Телефон: " + phone + "\n"+
+                        "Почта: " + email+ "\n"+
+                        "Дата: " + dategame + "\n"+
+                        "Сообщение: " + message + "\n"+
+                        "Квест: " + quest);
             }
 
 
             // Send message
-            Transport.send(message);
-            System.out.println("Email Sent successfully....");
+            Transport.send(mimemessage);
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }
