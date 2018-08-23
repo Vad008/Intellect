@@ -1,6 +1,7 @@
 package com.intel.site.controller;
 
 import com.intel.site.dto.Book;
+import com.intel.site.dto.Emailsend;
 import com.intel.site.dto.Record;
 import com.intel.site.dto.Sertificate;
 import com.intel.site.services.DbService;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -61,6 +63,8 @@ public class MainController {
 
     @GetMapping(value = "main")
     public String main() {
+        Emailsend em = new Emailsend();
+        em.send();
         return "main";
     }
 
