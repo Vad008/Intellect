@@ -96,7 +96,6 @@ public class MainController {
                 case "sert":
                     List<Sertificate> list = dbService.getAllSertificates();
                     model.addAttribute("list", list);
-                    System.out.println(list.get(0).getName());
                     return "adminpage";
                 case "book":
                     model.addAttribute("books", dbService.getAllBooks());
@@ -124,9 +123,9 @@ public class MainController {
 
     @RequestMapping(value = "booking", method = RequestMethod.POST)
     public String endBooking(Model model, @RequestParam String name, @RequestParam String phone,
-                             @RequestParam String email, @RequestParam String time, @RequestParam String message) {
-        dbService.addBook(new Book(dbService.getNewIdBook(), name, phone, email, time, "Куш", message));
-        Emailsend em = new Emailsend(name,phone,email,time,message,"Куш");
+                             @RequestParam String email, @RequestParam String date, @RequestParam String time, @RequestParam String message) {
+        dbService.addBook(new Book(dbService.getNewIdBook(), name, phone, email, date + "T" + time, "Куш", message));
+        Emailsend em = new Emailsend(name, phone, email, date + "T" + time, message, "Куш");
         em.send();
         model.addAttribute("isGood", "Квет забронирован успешно");
         return "booking";
@@ -139,10 +138,11 @@ public class MainController {
 
     @RequestMapping(value = "bookingclin", method = RequestMethod.POST)
     public String endBookingClin(Model model, @RequestParam String name, @RequestParam String phone,
-                                 @RequestParam String email, @RequestParam String time, @RequestParam String message) {
+                                 @RequestParam String email, @RequestParam String date, @RequestParam String time, @RequestParam String message) {
         model.addAttribute("isGood", "Квет забронирован успешно");
-        Emailsend em = new Emailsend(name,phone,email,time,message,"Клініка");
+        Emailsend em = new Emailsend(name, phone, email, date + "T" + time, message, "Клініка");
         em.send();
+        dbService.addBook(new Book(dbService.getNewIdBook(), name, phone, email, date + "T" + time, "Клініка", message));
         model.addAttribute("isGood", "Квет забронирован успешно");
         return "bookingclin";
     }
@@ -158,5 +158,28 @@ public class MainController {
         return "records";
     }
 
+    @RequestMapping(value = "recordsadmin", method = RequestMethod.POST)
+    public String recordsAdmin(Model model, @RequestParam String crew, @RequestParam float timeExit) {
+        dbService.addRecord(new Record(dbService.getNewIdRecord(), crew, timeExit,"Куш"));
+        List<Record> kush = dbService.getKushRecords(dbService.getAllRecords());
+        List<Record> clinic = dbService.getClinicRecords(dbService.getAllRecords());
+        Collections.sort(kush);
+        Collections.sort(clinic);
+        model.addAttribute("kush", kush);
+        model.addAttribute("clinic", clinic);
+        return "recordsadmin";
+    }
 
+
+    @RequestMapping(value = "recordsadminclin", method = RequestMethod.POST)
+    public String recordsAdminClin(Model model, @RequestParam String crew, @RequestParam float timeExit) {
+        dbService.addRecord(new Record(dbService.getNewIdRecord(), crew, timeExit,"Клініка"));
+        List<Record> kush = dbService.getKushRecords(dbService.getAllRecords());
+        List<Record> clinic = dbService.getClinicRecords(dbService.getAllRecords());
+        Collections.sort(kush);
+        Collections.sort(clinic);
+        model.addAttribute("kush", kush);
+        model.addAttribute("clinic", clinic);
+        return "recordsadmin";
+    }
 }

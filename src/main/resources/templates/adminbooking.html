@@ -107,6 +107,7 @@
             <td>Имя</td>
             <td>Номер телефона</td>
             <td>Почта</td>
+            <td>Квест</td>
             <td>Дата и время</td>
             <td>Сообщение</td>
             <td>Выполнено</td>
@@ -117,6 +118,7 @@
                 <td th:text="${book.getName()}"></td>
                 <td th:text="${book.getPhone()}"></td>
                 <td th:text="${book.getEmail()}"></td>
+                <td th:text="${book.getQuest()}"></td>
                 <td th:text="${book.getDatequest()}"></td>
                 <td th:text="${book.getMessageuser()}"></td>
                 <td th:switch="${book.isDone()}">

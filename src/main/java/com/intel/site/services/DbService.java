@@ -125,5 +125,26 @@ public class DbService {
         return list;
     }
 
+    public int getNewIdRecord(){
+        int i = 0;
+        for (Record sert : getAllRecords()) {
+            if (i <= sert.getId()) {
+                i = sert.getId() + 1;
+            }
+        }
+        return i;
+    }
+
+    public void addRecord(Record record){
+        Map<String, Object> param = new HashMap<>();
+        param.put("id", record.getId());
+        param.put("crew", record.getCrew());
+        param.put("timeexit", record.getTimeexit());
+        param.put("quest", record.getQuest());
+        jdbcTemplate.update("INSERT INTO records(id,crew,timeexit,quest) " +
+                        "VALUES (:id,:crew,:timeexit,:quest)"
+                , param);
+    }
+
 
 }

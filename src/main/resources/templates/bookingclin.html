@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Бронирование</title>
@@ -108,7 +108,7 @@
         </H1>
     </div>
 </div>
-<p align="center"  style="color: greenyellow;font-style: italic; font-size: 20px" th:text="${isGood}"></p>
+<p align="center" style="color: greenyellow;font-style: italic; font-size: 20px" th:text="${isGood}"></p>
 
 <p align="center" style="color: white;font-style: italic; font-size: 20px">
     <font face="Times New Roman">
@@ -134,11 +134,14 @@
         <img src="images/delimiter.png"/>
         Цены: понедельник - четверг с 11.00 до 16.00 - 400 грн; пятница - воскресенье с 16.00 ло 22.00 - 500 грн
         <br/>
-        понедельник - четверг с 16.00 до 22.00  и пятница - воскресенье с 11.00 ло 16.00 - 400 грн;
+        понедельник - четверг с 16.00 до 22.00 и пятница - воскресенье с 11.00 ло 16.00 - 450 грн;
         <br/>
         <br/>
         <br/>
-        Вы самые известные и профессиональные грабители во всем мире, И ваш большой куш - это редкие и бесценные слитки золота которые спрятаны в самом загадочном банке америки. Добраться в хранилище будет не просто. данное помещение охраняется современной охранной системой и наилучшими специалистами. проникнуть туда незамеченным будет нереально.
+        Вы самые известные и профессиональные грабители во всем мире, И ваш большой куш - это редкие и бесценные слитки
+        золота которые спрятаны в самом загадочном банке америки. Добраться в хранилище будет не просто. данное
+        помещение охраняется современной охранной системой и наилучшими специалистами. проникнуть туда незамеченным
+        будет нереально.
         одна попытка и один шанс.
         Время ограниченно . . .
         <br/>
@@ -168,9 +171,10 @@
     <h2 align="center" style="color: white;font-style: italic; font-size: 20px">
         Выберите дату и время:
         <br/>
-    <input   type="datetime-local" align="center" name="time" required=""/>
+        <input type="date" align="center" name="date" required=""/>
+        <input type="time" align="center" name="time" required=""/>
     </h2>
-        <br/>
+    <br/>
     <h2 align="center" style="color: white;font-style: italic; font-size: 20px">
         Сообщение:
     </h2>
@@ -191,7 +195,5 @@
 <h1 align="center">
     <img src="images/intelimage2.png"/>
 </h1>
-
-
 </body>
 </html>
