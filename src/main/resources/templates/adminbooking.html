@@ -124,7 +124,7 @@
                 <td th:switch="${book.isDone()}">
                     <p th:case="true">Сделано</p>
                     <form method="post" action="admin" th:case="false">
-                        <input type="submit" value="Сделано" crew="idquest" th:value="${book.getId()}"/>
+                        <input type="submit" value="Сделано" name="idquest" th:value="${book.getId()}"/>
                     </form>
                 </td>
             </tr>

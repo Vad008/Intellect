@@ -113,12 +113,12 @@
             <tr>
                 <th th:text="${user.getId()}"></th>
                 <td th:text="${user.getName()}"></td>
-                <td th:text="${user.getEmail()}"></td>
+                <td th:text="${user.getPhone()}"></td>
                 <td th:text="${user.getEmail()}"></td>
                 <td th:switch="${user.isDone()}">
                     <p th:case="true">Сделано</p>
                     <form method="post" action="admin" th:case="false">
-                        <input type="submit" value="Сделано" crew="id" th:value="${user.getId()}"/>
+                        <input type="submit" value="Сделано" name="id" th:value="${user.getId()}"/>
                     </form>
                 </td>
             </tr>

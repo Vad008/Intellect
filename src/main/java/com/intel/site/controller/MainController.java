@@ -53,8 +53,12 @@ public class MainController {
     }
 
     @RequestMapping(value = "sertificate", method = RequestMethod.POST)
-    public String newSertificate(@RequestParam String name, @RequestParam String phone, @RequestParam String email) {
+    public String newSertificate(@RequestParam String name, @RequestParam String phone, @RequestParam String email, Model model) {
+        Emailsend em = new Emailsend(name, phone, email);
+        em.send();
         dbService.addSertificate(new Sertificate(dbService.getNewId(), name, phone, email));
+        model.addAttribute("isGood", "Сертификат заказан успешно, мы свяжемся с вами " +
+                "в ближайшее время");
         return "sertificate";
     }
 

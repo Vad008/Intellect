@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Сертификаты</title>
@@ -91,6 +91,9 @@
         <H1 align="center" style="color: white;font-style: italic;">Сертификаты</H1>
     </div>
 </div>
+<p align="center" style="color: greenyellow;font-style: italic; font-size: 30px" th:text="${isGood}">
+
+</p>
 <p align="center" style="color: white;font-style: italic; font-size: 20px">
     <font face="Times New Roman">
         Вы можете заказать сертификат для себя или в подарок близкому человеку.
@@ -118,7 +121,7 @@
     <h3 align="center" style="color: white;font-style: italic; font-size: 20px">
     Телефон:
     </h3>
-    <input placeholder="+380932026053" align="center" type="text" name="timeexit" required=""/>
+    <input placeholder="+380932026053" align="center" type="text" name="phone" required=""/>
     <br/>
     <h2 align="center" style="color: white;font-style: italic; font-size: 20px">
     Почта:
