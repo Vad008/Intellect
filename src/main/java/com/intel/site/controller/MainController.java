@@ -41,9 +41,17 @@ public class MainController {
         return "discount";
     }
 
-    @GetMapping(value = "contacts")
+    @RequestMapping(value = "contacts", method = RequestMethod.GET)
     public String contacts() {
-        dbService.addSertificate(new Sertificate(dbService.getNewId(), "new", "phone", "email", true));
+        return "contacts";
+    }
+
+    @RequestMapping(value = "contacts", method = RequestMethod.POST)
+    public String contactsPost(@RequestParam String name, @RequestParam String phone, @RequestParam String email,
+                               @RequestParam String message, Model model) {
+        Emailsend es = new Emailsend(name, phone, email, message);
+        es.send();
+        model.addAttribute("isGood", "Мы с вами скоро свяжемся");
         return "contacts";
     }
 

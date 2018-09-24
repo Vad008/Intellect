@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Контакты</title>
@@ -95,6 +95,9 @@
         <H1 align="center" style="color: white;font-style: italic;">КОНТАКТЫ</H1>
     </div>
 </div>
+<p align="center" style="color: greenyellow;font-style: italic; font-size: 30px" th:text="${isGood}">
+
+</p>
 <p align="center" style="color: white;font-style: italic; font-size: 20px">
     <font face="Times New Roman">
         тел: 096 491 65 12
@@ -115,7 +118,7 @@
         <br/>
     </font>
 </p>
-<form method="post" action="#">
+<form method="post" action="/contacts">
     <h2 align="center" style="color: white;font-style: italic; font-size: 20px">
         Имя:
     </h2>
