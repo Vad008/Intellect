@@ -76,7 +76,7 @@ public class Emailsend {
                 mimemessage.setText("Имя: " + name + "\n" +
                         "Телефон: " + phone + "\n" +
                         "Почта: " + email);
-            } else if (message.equals("Клініка") || message.equals("Куш")) {
+            } else if (quest.equals("Клініка") || quest.equals("Куш")) {
                 mimemessage.setSubject("Квест"); // subject line
                 // actual mail body
                 mimemessage.setText("Имя: " + name + "\n" +

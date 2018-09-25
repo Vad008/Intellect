@@ -70,7 +70,7 @@ public class MainController {
         return "sertificate";
     }
 
-    @GetMapping(value = "main")
+    @GetMapping(value = "")
     public String main() {
         return "main";
     }
@@ -155,7 +155,7 @@ public class MainController {
         Emailsend em = new Emailsend(name, phone, email, date + "T" + time, message, "Клініка");
         em.send();
         dbService.addBook(new Book(dbService.getNewIdBook(), name, phone, email, date + "T" + time, "Клініка", message));
-        model.addAttribute("isGood", "Квет забронирован успешно");
+        model.addAttribute("isGood", "Квеcт забронирован успешно");
         return "bookingclin";
     }
 
