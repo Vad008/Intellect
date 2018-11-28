@@ -55,7 +55,7 @@ public class Emailsend {
     public void send() {
         String to = "Vad008@ukr.net";         // receiver email
         String from = "Vad008@ukr.net";       // sender email
-        String host = "mail.2upost.com";            // mail server host
+        String host = "localhost";            // mail server host
 
         Properties properties = System.getProperties();
         properties.setProperty("mail.smtp.host", host);
